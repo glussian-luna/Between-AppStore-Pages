@@ -192,8 +192,32 @@ p {
 .card p,
 .document p,
 .document li,
+.message-help p,
 .muted {
   color: var(--muted);
+}
+
+.message-help {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  align-items: center;
+  gap: 44px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 86% 22%, rgba(214, 79, 235, 0.18), transparent 34%),
+    radial-gradient(circle at 18% 80%, rgba(114, 87, 255, 0.14), transparent 30%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.message-help-image {
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+  border: 1px solid rgba(70, 51, 115, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(70, 51, 115, 0.18);
 }
 
 .notice {
@@ -254,5 +278,10 @@ p {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .message-help {
+    grid-template-columns: 1fr;
+    padding: 24px;
   }
 }
