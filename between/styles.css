@@ -1,0 +1,258 @@
+:root {
+  color-scheme: light;
+  --background: #f9f7ff;
+  --surface: #ffffff;
+  --text: #252038;
+  --muted: #665f7d;
+  --accent: #7257ff;
+  --accent-strong: #d64feb;
+  --accent-soft: #f1eaff;
+  --line: #e5def3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+}
+
+.brand {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-with-icon img {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  box-shadow: 0 8px 20px rgba(114, 87, 255, 0.22);
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--muted);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 72px 0 56px;
+}
+
+.between-hero {
+  padding: 64px 0 84px;
+  background:
+    radial-gradient(circle at 72% 28%, rgba(217, 79, 235, 0.24), transparent 30%),
+    radial-gradient(circle at 62% 56%, rgba(100, 157, 255, 0.24), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(243, 232, 255, 0.76));
+}
+
+.between-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 410px);
+  align-items: center;
+  gap: 48px;
+}
+
+.between-visual {
+  position: relative;
+  min-height: 570px;
+}
+
+.between-logo-hero {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: min(300px, 54vw);
+  height: auto;
+  border-radius: 52px;
+  box-shadow: 0 28px 80px rgba(114, 87, 255, 0.25);
+}
+
+.between-shot {
+  position: absolute;
+  width: min(260px, 44vw);
+  height: auto;
+  border: 1px solid rgba(70, 51, 115, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(70, 51, 115, 0.18);
+}
+
+.between-shot-main {
+  right: 0;
+  top: 166px;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(42px, 8vw, 76px);
+  letter-spacing: 0;
+  line-height: 0.98;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin: 28px 0 8px;
+  font-size: 19px;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+.lead {
+  max-width: 680px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 21px;
+}
+
+.section {
+  border-top: 1px solid var(--line);
+  padding: 56px 0;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.section-heading p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  min-height: 150px;
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 247, 255, 0.94)),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.card p,
+.document p,
+.document li,
+.muted {
+  color: var(--muted);
+}
+
+.notice {
+  padding: 18px;
+  margin: 22px 0;
+  background: var(--accent-soft);
+  border: 1px solid #dacdff;
+  border-radius: 8px;
+}
+
+.document {
+  max-width: 760px;
+  padding-bottom: 60px;
+}
+
+.document ul {
+  padding-left: 22px;
+}
+
+.document li {
+  margin-bottom: 8px;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  padding: 28px 0 40px;
+  font-size: 14px;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .between-hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .between-visual {
+    min-height: 500px;
+  }
+
+  .between-logo-hero {
+    width: min(260px, 68vw);
+    border-radius: 42px;
+  }
+
+  .between-shot {
+    width: min(220px, 58vw);
+    border-radius: 22px;
+  }
+
+  .between-shot-main {
+    top: 170px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
